@@ -1,7 +1,7 @@
 # Capacitor File Selector
 
 For detailed tutorial on how to enable dark mode using this plugin visit:
-
+https://medium.com/@hinddeep.purohit007/picking-files-in-capacitor-apps-a82c67384496 <br/>
 
 Platforms Supported: Android, iOS, and Web/PWA
 
