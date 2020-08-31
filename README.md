@@ -1,4 +1,4 @@
-# Ionic Capacitor Dark Mode
+# Capacitor File Selector
 
 For detailed tutorial on how to enable dark mode using this plugin visit:
 
@@ -9,13 +9,17 @@ This plugin can be used to conditionally select files form Android/iOS devices a
 
 # Installation <br/>
 
+```
 <i> npm install capacitor-file-selector </i>
+```
 
 # Android Configuration: <br/>
 Open MainActivity.java and add the following code inside this.init() <br/>
+```
 <i> add(FileSelector.class); </i> <br/>
 Adding the above mentioned line will add the following import statement: <br/>
 <i> import com.bkon.capacitor.fileselector.FileSelector; </i> <br/>
+```
 If you encounter errors, please add both the lines manually to MainActivity.java <br/>
 
 To view all the supported Extensions please visit: <br/>
@@ -27,9 +31,11 @@ To view all the supported extensions please visit: <br/>
 https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html <br/>
 
 # Web Configuration <br/>
+```
 <i> import { Plugins } from '@capacitor/core'; </i> <br/>
 <i> const { FileSelector } = Plugins; </i> <br/>
 <i>import ‘capacitor-file-selector’ // Comment out this line when building android/iOS app</i> <br/>
+```
 
 
 <b> SPECIAL NOTE: </b> When building the app for Android/iOS please do not forget to comment out “import ‘capacitor-file-selector’ ”. The import statement is used to register the web implementation of the plugin. If you register the web implementation of the plugin on native android/iOS app, the code that gets invoked is the web implementation instead of the native Android/iOS implementation. <br/>
@@ -45,8 +51,10 @@ To allow the selection of all file types use “*” <br/>
 
 If you wish to allow the user to select more than file, set the multiple_selection variable to true, else set it to false. Use the ext array to list out all the permitted extensions / broader file categories. The user will be able to select only the files with extensions / category outlined in this ext array. <br/>
 
-The ext array IS case sensitive. All characters entered must be in lowercase. If not use Typescript’s map function to convert them into lowercase.  <br/>   
+The ext array IS case sensitive. All characters entered must be in lowercase. If not use Typescript’s map function to convert them into lowercase.  <br/> 
+```  
 ext = ext.map(v => v.toLowerCase()); <br/>
+```
 
 Data returned by the file picker contains: <br/>
 1. “paths” array - an array of web accessible URL(s) <br/>
@@ -55,8 +63,8 @@ Data returned by the file picker contains: <br/>
 
 2 and 3 can be combined to rebuild the original file name. The following function illustrates how to upload files fetched from Android/iOS/Web to any server. <br/>
 
-async select() <br/>
-  { <br/>
+```
+async select() { <br/>
     let multiple_selection = true <br/>
     //let ext = [".jpg",".png",".pdf",".jpeg"] // list of extensions <br/>
     let ext = ["MP3", "ImaGes"] // combination of extensions or category <br/> 
@@ -67,7 +75,7 @@ async select() <br/>
     let selectedFile = await FileSelector.fileSelector({ <br/>
       multiple_selection: multiple_selection, <br/>
       ext: ext <br/>
-    }) <br/> 
+    }) <br/>
 
     if(this.platform.is("android")) <br/>
     { <br/>
@@ -107,5 +115,5 @@ async select() <br/>
             } <br/>
         });  <br/>
     } <br/>
-  } <br/>
-
+} <br/>
+```
