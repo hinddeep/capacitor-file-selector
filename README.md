@@ -3,6 +3,8 @@
 For detailed tutorial on how to enable dark mode using this plugin visit:
 https://medium.com/@hinddeep.purohit007/picking-files-in-capacitor-apps-a82c67384496 <br/>
 
+Demo Application: https://github.com/hinddeep/demo-capacitor-file-picker <br/>
+
 Platforms Supported: Android, iOS, and Web/PWA
 
 This plugin can be used to conditionally select files form Android/iOS devices and the web.
