@@ -10,15 +10,15 @@ This plugin can be used to conditionally select files form Android/iOS devices a
 # Installation <br/>
 
 ```
-<i> npm install capacitor-file-selector </i>
+npm install capacitor-file-selector
 ```
 
 # Android Configuration: <br/>
 Open MainActivity.java and add the following code inside this.init() <br/>
 ```
-<i> add(FileSelector.class); </i> <br/>
+add(FileSelector.class);<br/>
 Adding the above mentioned line will add the following import statement: <br/>
-<i> import com.bkon.capacitor.fileselector.FileSelector; </i> <br/>
+import com.bkon.capacitor.fileselector.FileSelector;<br/>
 ```
 If you encounter errors, please add both the lines manually to MainActivity.java <br/>
 
@@ -32,9 +32,9 @@ https://developer.apple.com/library/archive/documentation/Miscellaneous/Referenc
 
 # Web Configuration <br/>
 ```
-<i> import { Plugins } from '@capacitor/core'; </i> <br/>
-<i> const { FileSelector } = Plugins; </i> <br/>
-<i>import ‘capacitor-file-selector’ // Comment out this line when building android/iOS app</i> <br/>
+import { Plugins } from '@capacitor/core'; <br/>
+const { FileSelector } = Plugins; <br/>
+import ‘capacitor-file-selector’ // Comment out this line when building android/iOS app<br/>
 ```
 
 
