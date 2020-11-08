@@ -2,6 +2,11 @@ import { WebPlugin } from '@capacitor/core';
 import { FileSelectorPlugin } from './definitions';
 
 export class FileSelectorWeb extends WebPlugin implements FileSelectorPlugin {
+
+  private fileSelectorInput : HTMLInputElement | undefined;
+  private readonly ACCEPT_TYPES = new Map([['*', 'image/*,video/*,audio/*'], ['images', 'image/*,'],
+    ['videos', 'video/*,'], ['audios', 'audio/*,']]);
+
   constructor() {
     super({
       name: 'FileSelector',
@@ -9,61 +14,42 @@ export class FileSelectorWeb extends WebPlugin implements FileSelectorPlugin {
     });
   }
 
-  fileSelector(options:{multiple_selection:boolean,ext:string[]}):Promise<any>
-  {
-    var x:HTMLInputElement = <HTMLInputElement> document.createElement("INPUT");
-    x.hidden = true
-    x.setAttribute("type", "file");
-    x.setAttribute("id", "filePicker");
-    
-    var accept = ""
-    options.ext.forEach(element => {
-        if(element == 'images')
-        {
-          accept = accept.concat("image/*,")
-        }
-        else if(element == 'videos')
-        {
-          accept = accept.concat("video/*,")
-        }
-        else if(element == 'audios')
-        {
-          accept = accept.concat("audio/*,")
-        }
-    });
+  fileSelector(options: {id?: string, multipleSelection: boolean, ext: string[]}): Promise<HTMLInputElement> {
 
-    let index = options.ext.indexOf("images")
-    if (index > -1) {
-      options.ext.splice(index, 1);
+    if (typeof this.fileSelectorInput === 'undefined') {
+      this.fileSelectorInput = <HTMLInputElement>document.createElement('INPUT');
+      this.fileSelectorInput.hidden = true;
+      this.fileSelectorInput.setAttribute('type', 'file');
+      this.fileSelectorInput.setAttribute('id', options?.id ? options?.id : 'filePicker');
+
+      let accept = '';
+      options.ext.forEach(element => {
+        if (this.ACCEPT_TYPES.has(element)) {
+          accept = accept.concat(this.ACCEPT_TYPES.get(element) as string);
+          options.ext = options.ext.filter(option => option !== element);
+        }
+      });
+
+      options.ext = options.ext.map(v => '.' + v);
+      accept = accept.concat(options.ext.join(','));
+      this.fileSelectorInput.setAttribute('accept', accept);
+
+      if(options.multipleSelection) {
+        this.fileSelectorInput.setAttribute('multiple', 'true');
+      }
     }
 
-    index = options.ext.indexOf("videos")
-    if (index > -1) {
-      options.ext.splice(index, 1);
-    }
-
-    index = options.ext.indexOf("audios")
-    if (index > -1) {
-      options.ext.splice(index, 1);
-    }
-
-    options.ext = options.ext.map(v => "." + v);
-    accept = accept.concat(options.ext.join(","))
-    x.setAttribute("accept",accept);
-
-    if(options.multiple_selection)
-    {
-      x.setAttribute("multiple","true")
-    }
-    x.addEventListener("change",
-    ()=>{
-      if(document != null)
-        {
-            this.notifyListeners("onFilesSelected",x.files)    
-        }
+    this.fileSelectorInput.addEventListener('change', (event) => {
+      if ((document != null) && (typeof this.fileSelectorInput !== 'undefined')) {
+        event.stopPropagation();
+        this.notifyListeners('onFilesSelected', this.fileSelectorInput.files);
+        this.removeAllListeners();
+      }
     })
-      x.click()
-      return Promise.resolve()
+
+    this.fileSelectorInput.value = '';
+    this.fileSelectorInput.click();
+    return Promise.resolve(this.fileSelectorInput);
   }
 }
 
