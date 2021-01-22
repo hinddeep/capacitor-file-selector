@@ -1,0 +1,4 @@
+com/bkon/capacitor/fileselector/capacitorfileselector/BuildConfig.java
+ com.bkon.capacitor.fileselector.capacitorfileselector.BuildConfig
+com/bkon/capacitor/fileselector/FileSelector.java
+ com.bkon.capacitor.fileselector.FileSelector

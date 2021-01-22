@@ -26,12 +26,19 @@ int anim design_bottom_sheet_slide_in 0x0
 int anim design_bottom_sheet_slide_out 0x0
 int anim design_snackbar_in 0x0
 int anim design_snackbar_out 0x0
+int anim fragment_fast_out_extra_slow_in 0x0
 int anim mtrl_bottom_sheet_slide_in 0x0
 int anim mtrl_bottom_sheet_slide_out 0x0
 int anim mtrl_card_lowers_interpolator 0x0
 int animator design_appbar_state_list_animator 0x0
 int animator design_fab_hide_motion_spec 0x0
 int animator design_fab_show_motion_spec 0x0
+int animator fragment_close_enter 0x0
+int animator fragment_close_exit 0x0
+int animator fragment_fade_enter 0x0
+int animator fragment_fade_exit 0x0
+int animator fragment_open_enter 0x0
+int animator fragment_open_exit 0x0
 int animator mtrl_btn_state_list_anim 0x0
 int animator mtrl_btn_unelevated_state_list_anim 0x0
 int animator mtrl_card_state_list_anim 0x0
@@ -146,7 +153,6 @@ int attr buttonCompat 0x0
 int attr buttonGravity 0x0
 int attr buttonIconDimen 0x0
 int attr buttonPanelSideLayout 0x0
-int attr buttonSize 0x0
 int attr buttonStyle 0x0
 int attr buttonStyleSmall 0x0
 int attr buttonTint 0x0
@@ -187,7 +193,6 @@ int attr chipStrokeColor 0x0
 int attr chipStrokeWidth 0x0
 int attr chipStyle 0x0
 int attr chipSurfaceColor 0x0
-int attr circleCrop 0x0
 int attr closeIcon 0x0
 int attr closeIconEnabled 0x0
 int attr closeIconEndPadding 0x0
@@ -218,7 +223,6 @@ int attr colorPrimary 0x0
 int attr colorPrimaryDark 0x0
 int attr colorPrimarySurface 0x0
 int attr colorPrimaryVariant 0x0
-int attr colorScheme 0x0
 int attr colorSecondary 0x0
 int attr colorSecondaryVariant 0x0
 int attr colorSurface 0x0
@@ -367,8 +371,6 @@ int attr iconStartPadding 0x0
 int attr iconTint 0x0
 int attr iconTintMode 0x0
 int attr iconifiedByDefault 0x0
-int attr imageAspectRatio 0x0
-int attr imageAspectRatioAdjust 0x0
 int attr imageButtonStyle 0x0
 int attr indeterminateProgressStyle 0x0
 int attr initialActivityCount 0x0
@@ -500,7 +502,6 @@ int attr ratingBarStyleSmall 0x0
 int attr recyclerViewStyle 0x0
 int attr reverseLayout 0x0
 int attr rippleColor 0x0
-int attr scopeUris 0x0
 int attr scrimAnimationDuration 0x0
 int attr scrimBackground 0x0
 int attr scrimVisibleHeightTrigger 0x0
@@ -674,6 +675,8 @@ int color abc_background_cache_hint_selector_material_light 0x0
 int color abc_btn_colored_borderless_text_material 0x0
 int color abc_btn_colored_text_material 0x0
 int color abc_color_highlight_material 0x0
+int color abc_decor_view_status_guard 0x0
+int color abc_decor_view_status_guard_light 0x0
 int color abc_hint_foreground_material_dark 0x0
 int color abc_hint_foreground_material_light 0x0
 int color abc_input_method_navigation_guard 0x0
@@ -695,6 +698,8 @@ int color abc_tint_spinner 0x0
 int color abc_tint_switch_track 0x0
 int color accent_material_dark 0x0
 int color accent_material_light 0x0
+int color androidx_core_ripple_material_light 0x0
+int color androidx_core_secondary_text_default_material_light 0x0
 int color background_floating_material_dark 0x0
 int color background_floating_material_light 0x0
 int color background_material_dark 0x0
@@ -705,10 +710,6 @@ int color bright_foreground_inverse_material_dark 0x0
 int color bright_foreground_inverse_material_light 0x0
 int color bright_foreground_material_dark 0x0
 int color bright_foreground_material_light 0x0
-int color browser_actions_bg_grey 0x0
-int color browser_actions_divider_color 0x0
-int color browser_actions_text_color 0x0
-int color browser_actions_title_color 0x0
 int color button_material_dark 0x0
 int color button_material_light 0x0
 int color cardview_dark_background 0x0
@@ -719,17 +720,6 @@ int color checkbox_themeable_attribute_color 0x0
 int color colorAccent 0x0
 int color colorPrimary 0x0
 int color colorPrimaryDark 0x0
-int color common_google_signin_btn_text_dark 0x0
-int color common_google_signin_btn_text_dark_default 0x0
-int color common_google_signin_btn_text_dark_disabled 0x0
-int color common_google_signin_btn_text_dark_focused 0x0
-int color common_google_signin_btn_text_dark_pressed 0x0
-int color common_google_signin_btn_text_light 0x0
-int color common_google_signin_btn_text_light_default 0x0
-int color common_google_signin_btn_text_light_disabled 0x0
-int color common_google_signin_btn_text_light_focused 0x0
-int color common_google_signin_btn_text_light_pressed 0x0
-int color common_google_signin_btn_tint 0x0
 int color design_bottom_navigation_shadow_color 0x0
 int color design_box_stroke_color 0x0
 int color design_dark_default_color_background 0x0
@@ -957,8 +947,6 @@ int dimen abc_text_size_title_material 0x0
 int dimen abc_text_size_title_material_toolbar 0x0
 int dimen action_bar_size 0x0
 int dimen appcompat_dialog_background_inset 0x0
-int dimen browser_actions_context_menu_max_width 0x0
-int dimen browser_actions_context_menu_min_padding 0x0
 int dimen cardview_compat_inset_shadow 0x0
 int dimen cardview_default_elevation 0x0
 int dimen cardview_default_radius 0x0
@@ -1301,33 +1289,12 @@ int drawable btn_radio_off_mtrl 0x0
 int drawable btn_radio_off_to_on_mtrl_animation 0x0
 int drawable btn_radio_on_mtrl 0x0
 int drawable btn_radio_on_to_off_mtrl_animation 0x0
-int drawable common_full_open_on_phone 0x0
-int drawable common_google_signin_btn_icon_dark 0x0
-int drawable common_google_signin_btn_icon_dark_focused 0x0
-int drawable common_google_signin_btn_icon_dark_normal 0x0
-int drawable common_google_signin_btn_icon_dark_normal_background 0x0
-int drawable common_google_signin_btn_icon_disabled 0x0
-int drawable common_google_signin_btn_icon_light 0x0
-int drawable common_google_signin_btn_icon_light_focused 0x0
-int drawable common_google_signin_btn_icon_light_normal 0x0
-int drawable common_google_signin_btn_icon_light_normal_background 0x0
-int drawable common_google_signin_btn_text_dark 0x0
-int drawable common_google_signin_btn_text_dark_focused 0x0
-int drawable common_google_signin_btn_text_dark_normal 0x0
-int drawable common_google_signin_btn_text_dark_normal_background 0x0
-int drawable common_google_signin_btn_text_disabled 0x0
-int drawable common_google_signin_btn_text_light 0x0
-int drawable common_google_signin_btn_text_light_focused 0x0
-int drawable common_google_signin_btn_text_light_normal 0x0
-int drawable common_google_signin_btn_text_light_normal_background 0x0
 int drawable design_bottom_navigation_item_background 0x0
 int drawable design_fab_background 0x0
 int drawable design_ic_visibility 0x0
 int drawable design_ic_visibility_off 0x0
 int drawable design_password_eye 0x0
 int drawable design_snackbar_background 0x0
-int drawable googleg_disabled_color_18 0x0
-int drawable googleg_standard_color_18 0x0
 int drawable ic_calendar_black_24dp 0x0
 int drawable ic_clear_black_24dp 0x0
 int drawable ic_edit_black_24dp 0x0
@@ -1422,18 +1389,11 @@ int id action_text 0x0
 int id actions 0x0
 int id activity_chooser_view_content 0x0
 int id add 0x0
-int id adjust_height 0x0
-int id adjust_width 0x0
 int id alertTitle 0x0
 int id async 0x0
 int id auto 0x0
 int id blocking 0x0
 int id bottom 0x0
-int id browser_actions_header_text 0x0
-int id browser_actions_menu_item_icon 0x0
-int id browser_actions_menu_item_text 0x0
-int id browser_actions_menu_items 0x0
-int id browser_actions_menu_view 0x0
 int id buttonPanel 0x0
 int id cancel_button 0x0
 int id center 0x0
@@ -1451,7 +1411,6 @@ int id coordinator 0x0
 int id custom 0x0
 int id customPanel 0x0
 int id cut 0x0
-int id dark 0x0
 int id date_picker_actions 0x0
 int id decor_content_parent 0x0
 int id default_activity_button 0x0
@@ -1472,13 +1431,13 @@ int id filled 0x0
 int id filter_chip 0x0
 int id fixed 0x0
 int id forever 0x0
+int id fragment_container_view_tag 0x0
 int id ghost_view 0x0
 int id ghost_view_holder 0x0
 int id group_divider 0x0
 int id home 0x0
 int id icon 0x0
 int id icon_group 0x0
-int id icon_only 0x0
 int id image 0x0
 int id info 0x0
 int id italic 0x0
@@ -1486,7 +1445,6 @@ int id item_touch_helper_previous_elevation 0x0
 int id labeled 0x0
 int id largeLabel 0x0
 int id left 0x0
-int id light 0x0
 int id line1 0x0
 int id line3 0x0
 int id listMode 0x0
@@ -1568,11 +1526,11 @@ int id smallLabel 0x0
 int id snackbar_action 0x0
 int id snackbar_text 0x0
 int id spacer 0x0
+int id special_effects_controller_view_tag 0x0
 int id split_action_bar 0x0
 int id src_atop 0x0
 int id src_in 0x0
 int id src_over 0x0
-int id standard 0x0
 int id start 0x0
 int id stretch 0x0
 int id submenuarrow 0x0
@@ -1614,9 +1572,12 @@ int id uniform 0x0
 int id unlabeled 0x0
 int id up 0x0
 int id view_offset_helper 0x0
+int id view_tree_lifecycle_owner 0x0
+int id view_tree_saved_state_registry_owner 0x0
+int id view_tree_view_model_store_owner 0x0
 int id visible 0x0
+int id visible_removing_fragment_view_tag 0x0
 int id webview 0x0
-int id wide 0x0
 int id wrap_content 0x0
 int integer abc_config_activityDefaultDur 0x0
 int integer abc_config_activityShortDur 0x0
@@ -1626,7 +1587,6 @@ int integer cancel_button_image_alpha 0x0
 int integer config_tooltipAnimTime 0x0
 int integer design_snackbar_text_max_lines 0x0
 int integer design_tab_indicator_anim_duration_ms 0x0
-int integer google_play_services_version 0x0
 int integer hide_password_duration 0x0
 int integer mtrl_badge_max_character_count 0x0
 int integer mtrl_btn_anim_delay_ms 0x0
@@ -1680,8 +1640,6 @@ int layout abc_search_view 0x0
 int layout abc_select_dialog_material 0x0
 int layout abc_tooltip 0x0
 int layout bridge_layout_main 0x0
-int layout browser_actions_context_menu_page 0x0
-int layout browser_actions_context_menu_row 0x0
 int layout custom_dialog 0x0
 int layout design_bottom_navigation_item 0x0
 int layout design_bottom_sheet_dialog 0x0
@@ -1786,33 +1744,10 @@ int string character_counter_overflowed_content_description 0x0
 int string character_counter_pattern 0x0
 int string chip_text 0x0
 int string clear_text_end_icon_content_description 0x0
-int string common_google_play_services_enable_button 0x0
-int string common_google_play_services_enable_text 0x0
-int string common_google_play_services_enable_title 0x0
-int string common_google_play_services_install_button 0x0
-int string common_google_play_services_install_text 0x0
-int string common_google_play_services_install_title 0x0
-int string common_google_play_services_notification_channel_name 0x0
-int string common_google_play_services_notification_ticker 0x0
-int string common_google_play_services_unknown_issue 0x0
-int string common_google_play_services_unsupported_text 0x0
-int string common_google_play_services_update_button 0x0
-int string common_google_play_services_update_text 0x0
-int string common_google_play_services_update_title 0x0
-int string common_google_play_services_updating_text 0x0
-int string common_google_play_services_wear_update_text 0x0
-int string common_open_on_phone 0x0
-int string common_signin_button_text 0x0
-int string common_signin_button_text_long 0x0
-int string copy_toast_msg 0x0
 int string error_icon_content_description 0x0
 int string exposed_dropdown_menu_content_description 0x0
 int string fab_transformation_scrim_behavior 0x0
 int string fab_transformation_sheet_behavior 0x0
-int string fallback_menu_item_copy_link 0x0
-int string fallback_menu_item_open_in_browser 0x0
-int string fallback_menu_item_share_link 0x0
-int string fcm_fallback_notification_channel_label 0x0
 int string hide_bottom_view_on_scroll_behavior 0x0
 int string icon_content_description 0x0
 int string mtrl_badge_numberless_content_description 0x0
@@ -2291,6 +2226,7 @@ int style Theme_AppCompat_Dialog 0x0
 int style Theme_AppCompat_DialogWhenLarge 0x0
 int style Theme_AppCompat_Dialog_Alert 0x0
 int style Theme_AppCompat_Dialog_MinWidth 0x0
+int style Theme_AppCompat_Empty 0x0
 int style Theme_AppCompat_Light 0x0
 int style Theme_AppCompat_Light_DarkActionBar 0x0
 int style Theme_AppCompat_Light_Dialog 0x0
@@ -2990,6 +2926,13 @@ int[] styleable ForegroundLinearLayout { 0x1010109, 0x1010200, 0x0 }
 int styleable ForegroundLinearLayout_android_foreground 0
 int styleable ForegroundLinearLayout_android_foregroundGravity 1
 int styleable ForegroundLinearLayout_foregroundInsidePadding 2
+int[] styleable Fragment { 0x10100d0, 0x1010003, 0x10100d1 }
+int styleable Fragment_android_id 0
+int styleable Fragment_android_name 1
+int styleable Fragment_android_tag 2
+int[] styleable FragmentContainerView { 0x1010003, 0x10100d1 }
+int styleable FragmentContainerView_android_name 0
+int styleable FragmentContainerView_android_tag 1
 int[] styleable GradientColor { 0x101020b, 0x10101a2, 0x10101a3, 0x101019e, 0x1010512, 0x1010513, 0x10101a4, 0x101019d, 0x1010510, 0x1010511, 0x1010201, 0x10101a1 }
 int styleable GradientColor_android_centerColor 0
 int styleable GradientColor_android_centerX 1
@@ -3024,10 +2967,6 @@ int styleable LinearLayoutCompat_Layout_android_layout_width 3
 int[] styleable ListPopupWindow { 0x10102ac, 0x10102ad }
 int styleable ListPopupWindow_android_dropDownHorizontalOffset 0
 int styleable ListPopupWindow_android_dropDownVerticalOffset 1
-int[] styleable LoadingImageView { 0x0, 0x0, 0x0 }
-int styleable LoadingImageView_circleCrop 0
-int styleable LoadingImageView_imageAspectRatio 1
-int styleable LoadingImageView_imageAspectRatioAdjust 2
 int[] styleable MaterialAlertDialog { 0x0, 0x0, 0x0, 0x0 }
 int styleable MaterialAlertDialog_backgroundInsetBottom 0
 int styleable MaterialAlertDialog_backgroundInsetEnd 1
@@ -3228,10 +3167,6 @@ int styleable ShapeAppearance_cornerSizeBottomLeft 6
 int styleable ShapeAppearance_cornerSizeBottomRight 7
 int styleable ShapeAppearance_cornerSizeTopLeft 8
 int styleable ShapeAppearance_cornerSizeTopRight 9
-int[] styleable SignInButton { 0x0, 0x0, 0x0 }
-int styleable SignInButton_buttonSize 0
-int styleable SignInButton_colorScheme 1
-int styleable SignInButton_scopeUris 2
 int[] styleable Snackbar { 0x0, 0x0 }
 int styleable Snackbar_snackbarButtonStyle 0
 int styleable Snackbar_snackbarStyle 1
@@ -3425,7 +3360,6 @@ int styleable ViewStubCompat_android_inflatedId 1
 int styleable ViewStubCompat_android_layout 2
 int[] styleable bridge_fragment { 0x0 }
 int styleable bridge_fragment_start_dir 0
-int xml image_share_filepaths 0x0
 int xml standalone_badge 0x0
 int xml standalone_badge_gravity_bottom_end 0x0
 int xml standalone_badge_gravity_bottom_start 0x0
