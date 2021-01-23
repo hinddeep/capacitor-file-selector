@@ -1,0 +1,16 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE - VSCode
+/.vscode
+
+# Compiled output
+/dist
+
+# Dependencies
+/node_modules

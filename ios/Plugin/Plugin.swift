@@ -54,7 +54,7 @@ public class FileSelector: CAPPlugin {
             documentPicker.delegate = self
             documentPicker.modalPresentationStyle = .formSheet
             documentPicker.allowsMultipleSelection = multiple_selection
-            self.bridge.viewController.present(documentPicker, animated: true, completion: nil)
+            self.bridge?.viewController?.present(documentPicker, animated: true, completion: nil)
             
         }
     }

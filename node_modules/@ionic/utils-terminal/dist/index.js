@@ -1,0 +1,38 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Debug = require("debug");
+const os = require("os");
+const debug = Debug('ionic:utils-terminal');
+/**
+ * These environment variables work for: GitHub Actions, Travis CI, CircleCI,
+ * Gitlab CI, AppVeyor, CodeShip, Jenkins, TeamCity, Bitbucket Pipelines, AWS
+ * CodeBuild
+ */
+exports.CI_ENVIRONMENT_VARIABLES = ['CI', 'BUILD_ID', 'BUILD_NUMBER', 'BITBUCKET_COMMIT', 'CODEBUILD_BUILD_ARN', 'GITHUB_ACTIONS'];
+exports.CI_ENVIRONMENT_VARIABLES_DETECTED = exports.CI_ENVIRONMENT_VARIABLES.filter(v => !!process.env[v]);
+function getShell() {
+    const { shell } = os.userInfo();
+    if (shell) {
+        return shell;
+    }
+    if (process.env.SHELL) {
+        return process.env.SHELL;
+    }
+    if (process.platform === 'darwin') {
+        return '/bin/bash';
+    }
+    if (process.platform === 'win32') {
+        return process.env.COMSPEC ? process.env.COMSPEC : 'cmd.exe';
+    }
+    return '/bin/sh';
+}
+if (exports.CI_ENVIRONMENT_VARIABLES_DETECTED.length > 0) {
+    debug(`Environment variables for CI detected: ${exports.CI_ENVIRONMENT_VARIABLES_DETECTED.join(', ')}`);
+}
+exports.TERMINAL_INFO = Object.freeze({
+    ci: exports.CI_ENVIRONMENT_VARIABLES_DETECTED.length > 0,
+    shell: getShell(),
+    tty: Boolean(process.stdin.isTTY && process.stdout.isTTY && process.stderr.isTTY),
+    windows: process.platform === 'win32' || !!(process.env.OSTYPE && /^(msys|cygwin)$/.test(process.env.OSTYPE) ||
+        process.env.MSYSTEM && /^MINGW(32|64)$/.test(process.env.MSYSTEM)),
+});

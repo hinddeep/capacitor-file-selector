@@ -11,10 +11,10 @@ import android.webkit.MimeTypeMap;
 
 import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
-import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
+import com.getcapacitor.annotation.CapacitorPlugin;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,14 +22,10 @@ import org.json.JSONException;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.getcapacitor.FileUtils.getFileUrlForUri;
 
 
 //  https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
-@NativePlugin(
+@CapacitorPlugin(
         requestCodes={FileSelector.PICKFILE_RESULT_CODE} // register request code(s) for intent results
 )
 public class FileSelector extends Plugin {
@@ -113,9 +109,9 @@ public class FileSelector extends Plugin {
                     ret.put("paths", pathArray.toString());
                     ret.put("original_names", org_name_Array.toString());
                     ret.put("extensions", extensionArray.toString());
-                    call.success(ret);
+                    call.resolve(ret);
                 } else {
-                    call.error("No paths found...");
+                    call.reject("No paths found...");
                 }
             }
         }

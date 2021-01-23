@@ -6,8 +6,9 @@ declare module '@capacitor/core' {
 }
 export interface FileSelectorPlugin {
     fileSelector(options: {
-        multiple_selection: boolean;
+        id?: string;
+        multipleSelection: boolean;
         ext: string[];
-    }): Promise<any>;
+    }): Promise<HTMLInputElement>;
     addListener(eventName: 'onFilesSelected', listenerFunc: (state: any) => void): PluginListenerHandle;
 }
